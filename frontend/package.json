@@ -1,0 +1,33 @@
+{
+  "name": "roma-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nivo/bar": "^0.88.0",
+    "@nivo/core": "^0.88.0",
+    "@nivo/pie": "^0.88.0",
+    "@reduxjs/toolkit": "1.7.1",
+    "next": "15.0.4",
+    "next-redux-wrapper": "8.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-nice-avatar": "^1.5.0",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.2",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.4",
+    "typescript": "^5"
+  }
+}

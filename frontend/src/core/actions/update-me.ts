@@ -1,0 +1,30 @@
+"use server";
+
+import ApiService from "@/core/services/Api.service";
+import CookiesService from "../services/Cookies.service";
+
+type UpdateMeBody = {
+  first_name: string;
+  last_name: string;
+  about: string;
+  is_closed: number;
+  is_private: number;
+};
+
+export const handleUpdateMe = async (body: UpdateMeBody) => {
+  const baseUrl = ApiService.getBaseUrl();
+  try {
+    const token = await CookiesService.getCookie("access_token");
+    const response = await fetch(`${baseUrl}/user/update_me`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }).then((res) => res.json());
+    return { data: response, error: undefined };
+  } catch (error) {
+    return { data: undefined, error };
+  }
+};
